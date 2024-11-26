@@ -1,17 +1,13 @@
 #include <stdio.h>
-
-enum days{SUN,MON,TUE,WED,THU,FRI,SAT};
-
-
-const char *days_names[]={"sunday","monday","tuesday","wednesday","thusday","friday","saturday"};
-
 int main(void) {
+	int data= 0x0A0B0C0D;
+	char* pc;
+	int i;
 
-	enum days d;
-	d = WED;
-	printf("%d번째 요일은 %s입니다\n", d, days_names[d]);
-
+	pc = (char*)&data;
+	for (i = 0; i < 4; i++) 
+		printf("*(pc+%d)=%02X\n", i, *(pc + i));
 	return 0;
+	
+
 }
-
-

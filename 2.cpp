@@ -1,35 +1,14 @@
-#define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
-
-struct date {
-	int month;
-	int day;
-	int year;
-};
-
-struct student {
-	int number;
-	char name[20];
-	double grade;
-	struct date* dob;
-};
-
 int main(void) {
+	int i = 3000;
+	int* p = NULL;
+	p = &i;
 
-
-
-	struct date d = { 3,20,2000 };
-	struct student s = { 1,"Kim",4.3 };
-
-
-	s.dob = &d;
-
-	printf("학번:%d\n", s.number);
-	printf("이름:%s\n", s.name);
-	printf("학점:%f\n", s.grade);
-	printf("생년원일:%d년 %d월 %d일\n", s.dob->year, s.dob->month, s.dob -> day);
+	printf("p==%p\n", p);
+	printf("&i==%p\n\n", &i);
+	printf("i==%d\n",i);
+	printf("*pi==%d\n", *p);
 
 	return 0;
-
 
 }

@@ -1,30 +1,22 @@
 #include <stdio.h>
-
-typedef struct point {
-	int x;
-	int y;
-
-}POINT;
-POINT translate(POINT p, POINT delta);
-
+void swap(int x, int y);
 int main(void) {
 
-	POINT p = { 2,3 };
-	POINT delta = { 10,10 };
-	POINT result;
+	int a = 100, b = 200;
+	printf("a=%d b=%d\n", a, b);
+	swap(a, b);
 
-	result = translate(p, delta);
-
-	printf("(%d,%d)+(%d,%d)->(%d,%d)\n", p.x, p.y, delta.x, delta.y, result.x, result.y);
-	printf("새로운 점의 좌표는 (%d,%d) 입니다.\n", result.x,result.y);
+	printf("a=%d b=%d\n", a, b);
 	return 0;
 }
 
-POINT translate(POINT p, POINT delta) {
+void swap(int x, int y) {
+	int tmp;
+	printf("x=%d y=%d\n", x, y);
 
-	POINT new_p;
+	tmp = x;
+	x = y;
+	y = tmp;
+	printf("x=%d y=%d\n", x, y);
 
-	new_p.x = p.x + delta.x;
-	new_p.y = p.y + delta.y;
-	return new_p;
 }

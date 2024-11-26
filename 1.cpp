@@ -1,28 +1,15 @@
-#include<stdio.h>
-#include<string.h>
-#define SIZE 3
-
-
-struct student {
-	int number;
-	char name[20];
-	double grade;
-
-
-};
+#include <stdio.h>
 
 int main(void) {
+	int i = 10;
+	double f = 12.3;
+	int* pi = NULL;
 
-	struct student s = { 24,"kim",4.3 };
-	struct student* p;
+	double* pf = NULL;
+	pi = &i;
+	pf = &f;
 
-	p = &s;
-
-	printf("학번:%d 이름:%s 학점:%f\n", s.number, s.name, s.grade);
-	printf("학번:%d 이름:%s 학점:%f\n", (*p).number, (*p).name, (*p).grade);
-
+	printf("%p %p \n", pi, &i);
+	printf("%p %p\n", pf, &f);
 	return 0;
-
-
 }
-
